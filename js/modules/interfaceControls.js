@@ -43,7 +43,10 @@ export const addControl = (mainBlock, addToDoBtn,todoModal,overlay, todoForm, ad
         let target = e.target;
         if (target === task && task.value === '') {
             addBtn.setAttribute('disabled', 'disabled');
-        } else {
+        } else if (target === task && task.value.match(/^[ ]+$/)) {
+            addBtn.setAttribute('disabled', 'disabled');
+        }
+        else {
             addBtn.removeAttribute('disabled', 'disabled');
         }
     })

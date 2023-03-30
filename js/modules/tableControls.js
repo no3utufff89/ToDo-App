@@ -21,12 +21,29 @@ export const tableControls = (tableBody,data,login) => {
             let taskId = target.closest('.table__row').id;
             taskId = Number(taskId);
             const elem = data.find(item => item.id === taskId);
-            elem.status = 'done';
-            localStorage.setItem(login, JSON.stringify(data));
-            let completeTodo = target.closest('.table__row').childNodes;
-            completeTodo[1].style.textDecoration = 'line-through';
-            completeTodo[1].style.color = 'aquamarine';
+            if (elem.status === 'active') {
+                elem.status = 'done';
+                localStorage.setItem(login, JSON.stringify(data));
+                let completeTodo = target.closest('.table__row').childNodes;
+                completeTodo[1].style.textDecoration = 'line-through';
+                completeTodo[1].style.color = 'aquamarine';
+            } else  if (elem.status === 'done') {
+                elem.status = 'active';
+                localStorage.setItem(login, JSON.stringify(data));
+                let completeTodo = target.closest('.table__row').childNodes;
+                completeTodo[1].style.textDecoration = 'none';
+                completeTodo[1].style.color = 'inherit';
+            }
+            // let taskId = target.closest('.table__row').id;
+            // taskId = Number(taskId);
+            // const elem = data.find(item => item.id === taskId);
+            // elem.status = 'done';
+            // localStorage.setItem(login, JSON.stringify(data));
+            // let completeTodo = target.closest('.table__row').childNodes;
+            // completeTodo[1].style.textDecoration = 'line-through';
+            // completeTodo[1].style.color = 'aquamarine';
         }
+
         if (target.closest('.controls__btn_chqnge')) {
             let changeTodo = target.closest('.table__row').childNodes;
             changeTodo[1].setAttribute('contentEditable','true');
