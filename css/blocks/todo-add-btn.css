@@ -1,0 +1,14 @@
+.todo-add-btn {
+    background-color: var(--main-btn-add-color);
+    border-radius: 30px;
+    border: none;
+    width: 210px;
+    height: 50px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn__icon {
+    margin-right: 15px;
+}

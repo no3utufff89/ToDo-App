@@ -1,0 +1,11 @@
+.first-line {
+    align-items: center;
+    justify-content: space-between;
+
+}
+.block-title__text {
+    color: var(--main-white);
+    font-size: 32px;
+    margin-right: 170px;
+    display: block;
+}

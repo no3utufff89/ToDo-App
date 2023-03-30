@@ -1,0 +1,14 @@
+:root {
+    --main-bg-dark:#222C41;
+    --main-bg-white:#fff;
+    --main-btn-add-color:#FDC248;
+    --main-hover-color:#5955B3;
+    --main-logOut-color:#5955B3;
+    --main-wrn-color:#FDC248;
+    --main-danger-color:#FF9393;
+    --main-comleted-color:#8DF9A5;
+    --main-menuText-color:#6A6A6A;
+    --main-activity-card:#2E384E;
+    --main-dark:#000;
+    --main-white:#fff;
+}

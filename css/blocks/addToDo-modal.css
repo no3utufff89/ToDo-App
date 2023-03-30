@@ -1,0 +1,29 @@
+.todo-modal {
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 32px 65px 28px 65px;
+    background-color: var(--main-hover-color);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    color: var(--main-white);
+    position: relative;
+    max-width: 600px;
+    background-image: url(../../assets/img/char.png);
+    background-position-x: right;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 152px 293px;
+    margin: 0 auto;
+    border-radius: 30px;
+    min-height: 560px;
+    display: none;
+}
+.addForm {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-bottom: 50px;
+}
+.todo-modal.active {
+    display: block;
+}

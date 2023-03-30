@@ -1,0 +1,21 @@
+.user-block {
+    color: var(--main-white);
+    column-gap: 44px;
+}
+.logined-user {
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+.user-block__info {
+    display: flex;
+    flex-direction: column;
+}
+.user-block__user-id {
+    color: var(--main-menuText-color);
+    font-weight: 100;
+    font-size: 18px;
+    align-self: flex-end;
+}
+.avatar-img {
+    display: block;
+}

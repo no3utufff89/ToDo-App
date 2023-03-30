@@ -1,0 +1,37 @@
+.controls__btn {
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+}
+.table {
+    width: 100%;
+    color: var(--main-white);
+    border-spacing: 0 20px;
+
+}
+.table__cell-name {
+    text-align: left;
+}
+.number.common {
+    background-color: #fff;
+    color: #2E384E;
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.check-icon,
+.change-icon,
+.delete-icon {
+    color: var(--main-white);
+}
+.controls {
+    display: flex;
+    justify-content: start;
+    gap: 25px;
+}
+.complete {
+    color: aquamarine;
+}

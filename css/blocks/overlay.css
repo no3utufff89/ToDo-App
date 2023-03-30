@@ -1,0 +1,13 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: #a1a1a1ba;
+    display: none;
+}
+.overlay.active {
+    display: block;
+}

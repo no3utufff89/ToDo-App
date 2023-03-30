@@ -1,0 +1,13 @@
+@import './default.css';
+@import './blocks/body.css';
+@import './blocks/menu-block.css';
+@import './blocks/main-window.css';
+@import './blocks/first-line.css';
+@import './blocks/todo-add-btn.css';
+@import './blocks/user-block.css';
+@import './blocks/activity.css';
+@import './blocks/table.css';
+@import './blocks/overlay.css';
+@import './blocks/login-modal.css';
+@import './blocks/addToDo-modal.css';
+

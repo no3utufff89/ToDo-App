@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-regular.eot');
+    src: local('lato'), local('lato-regular'),
+        url('../fonts/lato-regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/lato-regular.woff') format('woff'),
+        url('../fonts/lato-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-bold.eot');
+    src: local('lato bold'), local('lato-bold'),
+        url('../fonts/lato-bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/lato-bold.woff') format('woff'),
+        url('../fonts/lato-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-heavy.eot');
+    src: local('lato heavy'), local('lato-heavy'),
+        url('../fonts/lato-heavy.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/lato-heavy.woff') format('woff'),
+        url('../fonts/lato-heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/open-sans-bold.eot');
+    src: local('open sans'), local('open-Sans-bold'),
+        url('../fonts/open-sans-bold?#iefix') format('embedded-opentype'),
+        url('../fonts/open-sans-bold.woff') format('woff'),
+        url('../fonts/open-sans-bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
