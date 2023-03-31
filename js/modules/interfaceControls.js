@@ -1,6 +1,7 @@
 import {setStorage} from "./storageActions.js";
 import {createRow} from "./createRow.js";
 import {generateId} from "./generateId.js";
+import {dataFilter} from "./dataFilter.js";
 
 export const modalControl = (overlay, loginModal) => {
     const openLoginModal = () => {
@@ -51,22 +52,29 @@ export const addControl = (mainBlock, addToDoBtn,todoModal,overlay, todoForm, ad
         }
     })
 }
-export const addToBase = (todoForm,data,tableBody,login,overlay,todoModal) => {
+export const addToBase = (todoForm,data,tableBody,login,overlay,todoModal,activityBlocks) => {
     todoForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const id = generateId()
         const formData = new FormData(todoForm);
         const product = Object.fromEntries(formData);
+        product.task.trim();
         const newTask = {
             id:id,
             task:product.task,
             priority:product.priority,
             status:'active',
         }
+
         data.push(newTask);
         const newProductLine = data.length;
         tableBody.append(createRow(newProductLine,newTask))
-        setStorage(login,JSON.stringify(newTask))
+        setStorage(login,JSON.stringify(newTask));
+        const {completeTodos,
+               importantTodos,
+               totalTodos} = dataFilter(login);
+        activityBlocks[1].querySelector('span').textContent = `${totalTodos} всего дел`;
+        activityBlocks[2].querySelector('span').textContent = `${importantTodos.length} важных дел`;
         overlay.classList.remove('active');
         todoModal.classList.remove('active');
         todoForm.reset();

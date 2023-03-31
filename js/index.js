@@ -10,7 +10,7 @@ import {tableControls} from "./modules/tableControls.js";
 const  {body, appContainer} = getDefaultElements();
 const overlay = createOverlay();
 const {loginModal,loginForm} = createLoginModal();
-const {todoModal, todoForm, addBtn} = createAddModal();
+const {todoModal, todoForm, addBtn,todoInput} = createAddModal();
 const {closeLoginModal} = modalControl(overlay, loginModal,todoModal,todoForm);
 overlay.append(loginModal, todoModal);
 body.append(overlay);
@@ -34,7 +34,7 @@ const init = (login) => {
         addControl(mainBlock, addToDoBtn,todoModal,overlay, todoForm, addBtn,login);
         renderTodos(tableBody,data)
         addToBase(todoForm,data,tableBody,login,overlay,todoModal,activityBlocks)
-        tableControls(tableBody,data,login);
+        tableControls(tableBody,data,login,activityBlocks);
 }
 
 

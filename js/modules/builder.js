@@ -179,7 +179,7 @@ export const createAddModal = () => {
     return {
         todoModal,
         todoForm,
-        addBtn
+        addBtn,
     }
 
 }
