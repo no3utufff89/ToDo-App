@@ -73,8 +73,8 @@ export const addToBase = (todoForm,data,tableBody,login,overlay,todoModal,activi
         const {completeTodos,
                importantTodos,
                totalTodos} = dataFilter(login);
-        activityBlocks[1].querySelector('span').textContent = `${totalTodos} всего дел`;
-        activityBlocks[2].querySelector('span').textContent = `${importantTodos.length} важных дел`;
+        activityBlocks[1].querySelector('span').textContent = `всего дел: ${totalTodos}`;
+        activityBlocks[2].querySelector('span').textContent = `важных дел: ${importantTodos.length}`;
         overlay.classList.remove('active');
         todoModal.classList.remove('active');
         todoForm.reset();

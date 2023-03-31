@@ -16,9 +16,9 @@ export const tableControls = (tableBody,data,login,activityBlocks) => {
                tasksNumberChange(tableBody)
                deleteDataElement(taskId,data,login)
                const {totalTodos,importantTodos,completeTodos} = dataFilter(login);
-               activityBlocks[1].querySelector('span').textContent = `${totalTodos} всего дел`;
-               activityBlocks[2].querySelector('span').textContent = `${importantTodos.length} важных дел`;
-               activityBlocks[0].querySelector('span').textContent = `${completeTodos.length} дел завершено`;
+               activityBlocks[1].querySelector('span').textContent = `всего дел: ${totalTodos}`;
+               activityBlocks[2].querySelector('span').textContent = `важных дел: ${importantTodos.length}`;
+               activityBlocks[0].querySelector('span').textContent = `дел завершено: ${completeTodos.length}`;
            } else {
                return
            }
@@ -36,7 +36,7 @@ export const tableControls = (tableBody,data,login,activityBlocks) => {
                 let completeTodo = target.closest('.table__row').childNodes;
                 completeTodo[1].style.textDecoration = 'line-through';
                 completeTodo[1].style.color = 'aquamarine';
-                activityBlocks[0].querySelector('span').textContent = `${completeTodos.length} дел завершено`;
+                activityBlocks[0].querySelector('span').textContent = `дел завершено: ${completeTodos.length}`;
             } else  if (elem.status === 'done') {
 
                 elem.status = 'active';
@@ -45,7 +45,7 @@ export const tableControls = (tableBody,data,login,activityBlocks) => {
                 let completeTodo = target.closest('.table__row').childNodes;
                 completeTodo[1].style.textDecoration = 'none';
                 completeTodo[1].style.color = 'inherit';
-                activityBlocks[0].querySelector('span').textContent = `${completeTodos.length} дел завершено`;
+                activityBlocks[0].querySelector('span').textContent = `дел завершено: ${completeTodos.length}`;
 
             }
 
@@ -62,11 +62,13 @@ export const tableControls = (tableBody,data,login,activityBlocks) => {
         if (target.closest('.controls__btn_chqnge')) {
             let changeTodo = target.closest('.table__row').childNodes;
             changeTodo[1].setAttribute('contentEditable','true');
+            changeTodo[1].style.backgroundColor = '#2E384E';
             const elem = data.find(item => item.task === changeTodo[1].textContent);
             changeTodo[1].addEventListener('blur', () => {
                 elem.task = changeTodo[1].textContent;
                 localStorage.setItem(login, JSON.stringify(data));
                 changeTodo[1].setAttribute('contentEditable','false');
+                changeTodo[1].style.backgroundColor = 'inherit';
             })
         }
     })

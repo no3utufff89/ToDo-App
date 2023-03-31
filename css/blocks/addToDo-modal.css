@@ -8,11 +8,11 @@
     color: var(--main-white);
     position: relative;
     max-width: 600px;
-    background-image: url(../../assets/img/char.png);
+    background-image: url(../../assets/img/addTodo.png);
     background-position-x: right;
     background-position-y: bottom;
     background-repeat: no-repeat;
-    background-size: 152px 293px;
+    background-size: 270px 290px;
     margin: 0 auto;
     border-radius: 30px;
     min-height: 560px;
@@ -26,4 +26,21 @@
 }
 .todo-modal.active {
     display: block;
+}
+.addForm__label {
+    display: none;
+}
+.addForm__input {
+    border-radius: 30px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    padding-left: 30px;
+    outline: 0;
+    outline-offset: 0;
+}
+.priority-select {
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 15px;
 }

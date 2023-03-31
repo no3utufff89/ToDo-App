@@ -123,16 +123,16 @@ export const createTextInfoBlock = (login) => {
 export const createTable = () => {
     const table = document.createElement('table');
     table.className = 'table'
-    table.cellPadding = '0';
+    table.cellPadding = '20';
     table.cellSpacing = '0';
     const tableHead = document.createElement('thead');
     tableHead.className = 'table__head';
     tableHead.insertAdjacentHTML('beforeend',
         ' <tr>\n' +
         '          <th class="table__cell-name table__cell-name_id">№</th>\n' +
-        '          <th class="table__cell-name">Дело</th>\n' +
+        '          <th class="table__cell-name table__cell-name_long">Дело</th>\n' +
         '          <th class="table__cell-name">Важность</th>\n' +
-        '          <th class="table__cell-name">Редактировать</th>\n' +
+        '          <th class="table__cell-name table__cell-name_right ">Редактировать</th>\n' +
         '        </tr>')
     const tableBody = document.createElement('tbody');
     table.tableBody = tableBody;
@@ -164,7 +164,7 @@ export const createAddModal = () => {
          <label for="task" class="addForm__label">Дело</label>
       <input id="task" type="text" name="task" class="addForm__input" required="" placeholder="Введите текст">
       <label for="priorityId">Важность</label>
-      <select name="priority" id="priorityId">
+      <select name="priority" id="priorityId" class="priority-select">
         <option value="Обычная">Обычная</option>
         <option value="Важная">Важная</option>
         <option value="Срочная">Срочная</option>
@@ -220,7 +220,7 @@ export const createListsBlocks = (login,params = []) => {
         activityCardInfo.className = 'activity-card__info';
         const span = document.createElement('span');
         span.className = 'amount';
-        span.innerHTML = `${amount} ${text}`
+        span.innerHTML = `${text} ${amount}`
         activityBlockImg.width = 80;
         activityBlockImg.height = 80;
         activityBlockImg.className = 'activity-card__image';
@@ -243,12 +243,13 @@ export const createMenuList = (params) => {
     menu.className = 'menu';
     const menuList = document.createElement('ul');
     menuList.className = 'menu-list';
-    const menuItems = params.map(({title}) => {
+    const menuItems = params.map(({title,onclick}) => {
         const listElement = document.createElement('li');
         listElement.className = 'menu-list__item';
         const listLinks = document.createElement('a');
         listLinks.className = 'menu-list__link';
         listLinks.textContent = title;
+        listLinks.setAttribute('onclick',onclick);
         listElement.append(listLinks);
         return listElement;
     })

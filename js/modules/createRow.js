@@ -7,7 +7,7 @@ export const createRow = (index, {task, priority,id,status}) => {
     tdNumber.className = 'table__cell-value number common';
     tdNumber.textContent = index;
     const tdTask = document.createElement('td');
-    tdTask.className = 'table__cell-value name';
+    tdTask.className = 'table__cell-value name table__cell-name_long';
     tdTask.textContent = task;
     const tdPriority = document.createElement('td');
     tdPriority.className = 'table__cell-value priority';

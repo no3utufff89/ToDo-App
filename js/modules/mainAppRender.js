@@ -2,6 +2,7 @@ import {
     createAddBtn,
     createFirstLine, createListsBlocks, createLogoBlock,
     createMainBlock, createMenuContainer,
+    createMenuList,
     createTable,
     createTextInfoBlock,
     createUserBlock
@@ -14,23 +15,29 @@ export const mainAppRender = (appContainer, login) => {
         {
             className:'activity-card complete',
             src:'./assets/img/activity-card-icon.png',
-            text:'дел завершено',
+            text:'дел завершено:',
             amount:completeTodos.length
         },
         {
             className:'activity-card',
             src:'./assets/img/activity-card-icon.png',
-            text:'всего дел',
+            text:'всего дел:',
             amount: totalTodos
         },
         {
             className:'activity-card important',
             src:'./assets/img/activity-card-icon.png',
-            text:'важных дел',
+            text:'важных дел:',
             amount: importantTodos.length
         },
     ]);
-
+    const menuItems = createMenuList([
+        {
+            title: 'Выход',
+            onclick:'location.reload()'
+            
+        }
+    ]);
     const mainBlock = createMainBlock();
     const firstLine = createFirstLine();
     const userBlock = createUserBlock(login);
@@ -41,8 +48,8 @@ export const mainAppRender = (appContainer, login) => {
     const logoBlock = createLogoBlock();
 
     firstLine.append(textInfo, addToDoBtn, userBlock);
-    menuBlock.append(logoBlock)
-    mainBlock.append(firstLine,activityList,table)
+    menuBlock.append(logoBlock,menuItems.menuList);
+    mainBlock.append(firstLine,activityList,table);
     appContainer.append(menuBlock,mainBlock);
     return {
         mainBlock,

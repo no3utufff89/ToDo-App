@@ -13,11 +13,11 @@
    
 }
 .activity-card__info {
-    width: min-content;
+   
     color: var(--main-white);
 }
 .activity-card__image {
-    margin-right: 37px;
+    margin-right: 20px;
 }
 .activity-card.complete {
     background-image: url(../../assets/img/svg/line-complete.svg);

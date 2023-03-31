@@ -6,11 +6,18 @@
 .table {
     width: 100%;
     color: var(--main-white);
-    border-spacing: 0 20px;
+    border-collapse: collapse;
 
 }
 .table__cell-name {
     text-align: left;
+}
+.table__row {
+    vertical-align: bottom;
+    border-bottom: 2px solid var(--main-activity-card);
+}
+.table__cell-name_right {
+    text-align: right;
 }
 .number.common {
     background-color: #fff;
@@ -29,9 +36,12 @@
 }
 .controls {
     display: flex;
-    justify-content: start;
+    justify-content: end;
     gap: 25px;
 }
 .complete {
     color: aquamarine;
+}
+.table__cell-name_long {
+    width: 50%;
 }

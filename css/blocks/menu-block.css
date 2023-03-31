@@ -8,7 +8,6 @@
     padding-bottom: 25px;
     row-gap: 72px;
     height: calc(100vh - 40px);
-    background-image: url(../../assets/img/menu-img_01.png);
     background-position-x: center;
     background-position-y: calc(100% - 50px);
     background-repeat: no-repeat;
